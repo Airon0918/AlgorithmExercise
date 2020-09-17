@@ -3,7 +3,7 @@ package com.yangshm.leecode;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class _581_findUnsortedSubarray {
+public class _0581_findUnsortedSubarray {
 
     public int findUnsortedSubarray(int[] nums) {
         int l = nums.length, r = 0;

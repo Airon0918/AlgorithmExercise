@@ -13,24 +13,18 @@ public class Test {
             System.out.println(Thread.currentThread().getName() + ":" + ClassLayout.parseInstance(object1).toPrintable());
         }
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                synchronized (object1) {
-                    System.out.println(Thread.currentThread().getName() + ":" + ClassLayout.parseInstance(object1).toPrintable());
-                }
+        new Thread(() -> {
+            synchronized (object1) {
+                System.out.println(Thread.currentThread().getName() + ":" + ClassLayout.parseInstance(object1).toPrintable());
             }
         }).start();
         Thread.sleep(4000);
         System.out.println(Thread.currentThread().getName() + ":" + ClassLayout.parseInstance(object1).toPrintable());
 
         for (int i = 0; i < 10; i++) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    synchronized (object1) {
-                        System.out.println(ClassLayout.parseInstance(object1).toPrintable());
-                    }
+            new Thread(() -> {
+                synchronized (object1) {
+                    System.out.println(ClassLayout.parseInstance(object1).toPrintable());
                 }
             }).start();
         }

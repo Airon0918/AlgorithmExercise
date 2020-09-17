@@ -1,6 +1,6 @@
 package com.yangshm.leecode;
 
-public class _206_reverseList {
+public class _0206_reverseList {
 
     public static class ListNode {
         int val;

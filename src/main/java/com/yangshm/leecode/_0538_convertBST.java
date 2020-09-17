@@ -2,7 +2,7 @@ package com.yangshm.leecode;
 
 import java.util.Stack;
 
-public class _538_convertBST {
+public class _0538_convertBST {
 
     private int sum = 0;
 

@@ -11,7 +11,7 @@ import java.util.Queue;
  * 你需要将他们合并为一个新的二叉树。
  * 合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。
  */
-public class _617_mergeTrees {
+public class _0617_mergeTrees {
 
     public class TreeNode {
         int val;

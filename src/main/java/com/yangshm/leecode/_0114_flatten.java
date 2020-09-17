@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 //二叉树展开为链表
-public class _114_flatten {
+public class _0114_flatten {
 
     public class TreeNode {
         int val;

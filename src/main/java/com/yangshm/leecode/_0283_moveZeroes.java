@@ -1,6 +1,6 @@
 package com.yangshm.leecode;
 
-public class _283_moveZeroes {
+public class _0283_moveZeroes {
 
     public static void main(String[] args) {
         int[] nums = {0};

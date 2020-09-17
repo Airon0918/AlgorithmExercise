@@ -1,6 +1,6 @@
 package com.yangshm.leecode;
 
-public class _461_hammingDistance {
+public class _0461_hammingDistance {
     private int hammingDistance1(int x, int y) {
         // 不同的位置标记为1
         x ^= y;

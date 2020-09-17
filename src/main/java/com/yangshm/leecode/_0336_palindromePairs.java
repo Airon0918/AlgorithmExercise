@@ -8,11 +8,11 @@ import java.util.List;
  * 给定一组 互不相同 的单词， 找出所有不同 的索引对(i, j)，
  * 使得列表中的两个单词， words[i] + words[j] ，可拼接成回文串。
  */
-public class _336_palindromePairs {
+public class _0336_palindromePairs {
 
     public static void main(String[] args) {
         String[] words = {"abcd", "dcba", "lls", "s", "sssll"};
-        new _336_palindromePairs().palindromePairs(words);
+        new _0336_palindromePairs().palindromePairs(words);
     }
 
     //字典树

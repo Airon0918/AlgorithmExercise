@@ -7,7 +7,7 @@ package com.yangshm.leecode;
  * 任何数和其自身做异或运算，结果是0，即a⊕a=0。
  * 异或运算满足交换律和结合律。
  */
-public class _136_singleNumber {
+public class _0136_singleNumber {
 
     private int singleNumber(int[] nums) {
         int singleNumber = 0;

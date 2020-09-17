@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class _169_majorityElement {
+public class _0169_majorityElement {
 
     private static int majorityElement(int[] nums) {
         Arrays.sort(nums);

@@ -1,6 +1,6 @@
 package com.yangshm.leecode;
 
-public class _21_mergeTwoLists {
+public class _0021_mergeTwoLists {
 
     public class ListNode {
         int val;

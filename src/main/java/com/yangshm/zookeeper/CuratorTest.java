@@ -7,6 +7,7 @@ import org.apache.curator.framework.api.BackgroundCallback;
 import org.apache.curator.framework.api.CuratorEvent;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.apache.zookeeper.AsyncCallback;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
 
@@ -35,7 +36,15 @@ public class CuratorTest {
         client.create().withMode(CreateMode.PERSISTENT_SEQUENTIAL).forPath("/lockpath");
         client.delete().forPath("/lockpath");
 
+        AsyncCallback.StringCallback callback = (int var1, String var2, Object var3, String var4) -> {
+            System.out.println("var1" + var1);
+            System.out.println("var2" + var2);
+            System.out.println("var3" + var3);
+            System.out.println("var4" + var4);
+        };
 
+        client.create().inBackground().forPath("/a");
+        client.setData().inBackground().forPath("/a");
 
         //创建会话
         client.start();

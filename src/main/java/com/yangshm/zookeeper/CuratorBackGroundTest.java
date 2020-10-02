@@ -5,10 +5,14 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.AsyncCallback;
+import org.apache.zookeeper.data.Stat;
+import org.junit.Test;
 
 public class CuratorBackGroundTest {
+    private String testPath = "/test";
 
-    public static void main(String[] args) throws Exception {
+    @Test
+    public void testBackGround() throws Exception {
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
         CuratorFramework client = CuratorFrameworkFactory.newClient("127.0.0.1:2181", retryPolicy);
 
@@ -20,7 +24,11 @@ public class CuratorBackGroundTest {
         };
 
         client.start();
-        client.create().inBackground(callback).forPath("/aa");
+        Stat stat = client.checkExists().forPath(testPath);
+        if (stat == null) {
+            client.create().forPath(testPath);
+        }
         client.setData().inBackground(callback).forPath("/aa");
+        Thread.sleep(1000000);
     }
 }
